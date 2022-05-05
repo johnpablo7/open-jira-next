@@ -1,6 +1,6 @@
 import { EntriesState } from "./";
 
-type EntriesActionType = { type: "[Entries] - ActionName" };
+type EntriesActionType = { type: "[Entry] Add-Entry" };
 
 export const entriesReducer = (
   state: EntriesState,
