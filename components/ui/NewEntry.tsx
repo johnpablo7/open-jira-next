@@ -3,6 +3,7 @@ import { Box, Button, TextField } from "@mui/material";
 
 import SaveOutlinedIcon from "@mui/icons-material/SaveOutlined";
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
+
 import { EntriesContext } from "../../context/entries";
 import { UIContext } from "../../context/ui";
 
