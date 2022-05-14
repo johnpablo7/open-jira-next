@@ -66,6 +66,17 @@ export const EntriesProvider: FC = ({ children }) => {
     refreshEntries();
   }, []);
 
+  const deleteEntry = async (_id: string) => {
+    try {
+      const { data } = await entriesApi.delete(`/entries/${_id}`);
+      console.log("[Entry] - Delete-Entry", data);
+      dispatch({ type: "[Entry] Delete-Entry", payload: _id });
+      await refreshEntries();
+    } catch (error) {
+      console.log({ error });
+    }
+  };
+
   return (
     <EntriesContext.Provider
       value={{
@@ -73,6 +84,7 @@ export const EntriesProvider: FC = ({ children }) => {
         // Methods
         addNewEntry,
         updateEntry,
+        deleteEntry,
       }}
     >
       {children}
